@@ -1,0 +1,26 @@
+<template>
+<table class="slds-table slds-table__bordered">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Stage</th>
+            <th>CloseDate</th>
+            <th>Amount</th>
+            <th>SGST</th>
+            <th>CGST</th>
+        </tr>
+    </thead>
+    <tbody>
+    <template for:each={oppTaxList} for:item="op">
+        <tr key={op.Id}>
+            <td>{op.Name}</td>
+            <td>{op.Stage}</td>
+            <td>{op.CloseDate}</td>
+            <td>{op.Amount}</td>
+            <td>{op.SGST}</td>
+            <td>{op.CGST}</td>
+        </tr>
+    </template>
+    </tbody>
+</table>
+</template>
