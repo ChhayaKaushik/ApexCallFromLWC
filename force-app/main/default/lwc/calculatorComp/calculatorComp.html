@@ -1,0 +1,19 @@
+<template>
+    <div class="slds-box">
+        <div class="slds-box slds-theme_shade">
+            Calculator Application
+        </div>
+        <lightning-input value={firstNumber} label="Enter First Number : " onchange={capturefirstNumber}></lightning-input>
+        <!-- LWC has only one way binding unlike Aura which has two way binding -->
+        <br />
+        <lightning-input value={secondNumber} label="Enter Second Number :" onchange={capturesecondNumber}></lightning-input>
+        <br />
+        <lightning-button label="Add (+)" onclick={add}></lightning-button>
+        <lightning-button label="Subtract(-)" variant="brand" onclick={sub}></lightning-button>
+        <lightning-button label="Multiple (*)" variant="destructive" onclick={mul}></lightning-button>
+        <lightning-button label="Divide (/)" onclick={div}>/</lightning-button>
+        <br />
+        Result is : {result} 
+
+    </div>
+</template>

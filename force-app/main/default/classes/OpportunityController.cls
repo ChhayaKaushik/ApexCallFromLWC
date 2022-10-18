@@ -15,4 +15,18 @@ public with sharing class OpportunityController {
                     where StageName='Closed Won'];
         }
     
+        @AuraEnabled
+        public static void deleteOpp(String sid){
+            try {
+                System.debug(sid);
+                List<Opportunity> opList=[select Name from Opportunity where Id=:sid];
+                delete opList;
+            } 
+            catch(DMLException ex){
+              System.debug(ex.getMessage());
+            }
+            catch (Exception e) {
+                throw new AuraHandledException(e.getMessage());
+            }
+        }
 }
