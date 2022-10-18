@@ -1,0 +1,29 @@
+<template>
+    <!-- Lightning card has  1).Title 2).Action 3).Body 4).Footer -->
+    <lightning-card title="Opportunities Won/All">
+        <div slot="actions">
+            <lightning-button label="Load All Ops" onclick={loadAllOps} style="padding:10px ;"></lightning-button>            
+            <lightning-button label="Load Won Ops" onclick={loadWonOps} ></lightning-button>
+        </div>
+        <table class="slds-table slds-table__bordered">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Stage</th>
+                    <th>Close Date</th>
+                    <th>Amount </th>
+                </tr>
+            </thead>
+            <tbody>
+                <template for:each={resultList} for:item="opp">
+                    <tr key={opp.Id}>
+                        <td>{opp.Name}</td>
+                        <td>{opp.Stage}</td>
+                        <td>{opp.CloseDate}</td>
+                        <td>{opp.Amount}</td>
+                    </tr>
+                </template>
+            </tbody>
+        </table>
+    </lightning-card>
+</template>

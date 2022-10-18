@@ -1,0 +1,20 @@
+<template>
+    <table class="slds-table slds-table_bordered">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>StageName</th>
+                <th>CloseDate</th>
+            </tr>
+        </thead>
+        <tbody>
+            <template for:each={oppList.data} for:item="op">
+                <tr key={op.Id}>
+                    <td>{op.Name}</td>
+                    <td>{op.StageName}</td>
+                    <td>{op.CloseDate}</td>
+                </tr>
+            </template>
+        </tbody>
+    </table>
+</template>
